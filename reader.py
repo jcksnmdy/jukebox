@@ -2,11 +2,29 @@ import pygame
 import random
 import time
 
+from gpiozero import LED, Buzzer
+from guizero import App, Box, Text, TextBox, warn
+import csv
 
 id = 1
 pygame.init()
+ 
+ 
+def checkRFidTag():
+ 	tagId = rfidText.value
+	print(tagId)
+	return tagId
+ 
+print("Checking in 3")
+time.sleep(1)
+print("Checking in 2")
+time.sleep(1)
+print("Checking in 1")
+time.sleep(1)
 
-if id == 1:
+checkRFidTag()
+
+if id == checkRFidTag():
     randomNum=random.randint(1, 8)
     pygame.mixer.music.load("music/acoustic/" + str(randomNum) + ".mp3")
     pygame.mixer.music.play(0)
