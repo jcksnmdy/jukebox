@@ -11,9 +11,9 @@ pygame.init()
  
  
 def checkRFidTag():
- 	tagId = rfidText.value
-	print(tagId)
-	return tagId
+    tagId = rfidText.value
+    print(tagId)
+    return tagId
  
 print("Checking in 3")
 time.sleep(1)
@@ -22,10 +22,8 @@ time.sleep(1)
 print("Checking in 1")
 time.sleep(1)
 
-checkRFidTag()
-
 if id == checkRFidTag():
-    randomNum=random.randint(1, 8)
+    randomNum=random.randint(1, 10)
     pygame.mixer.music.load("music/acoustic/" + str(randomNum) + ".mp3")
     pygame.mixer.music.play(0)
     while pygame.mixer.music.get_busy():
@@ -34,7 +32,7 @@ if id == checkRFidTag():
             pygame.mixer.music.stop()
 
 if id == 2:
-    randomNum=random.randint(1, 8)
+    randomNum=random.randint(1, 11)
     pygame.mixer.music.load("music/disney/" + str(randomNum) + ".mp3")
     pygame.mixer.music.play(0)
     while pygame.mixer.music.get_busy():
@@ -50,7 +48,7 @@ if id == 3:
         if (input()=="s"):
             pygame.mixer.music.stop()
 if id == 4:
-    randomNum=random.randint(1, 8)
+    randomNum=random.randint(1, 11)
     pygame.mixer.music.load("music/larenDaigle/" + str(randomNum) + ".mp3")
     pygame.mixer.music.play(0)
     while pygame.mixer.music.get_busy():
@@ -59,8 +57,26 @@ if id == 4:
             pygame.mixer.music.stop()
 
 if id == 5:
-    randomNum=random.randint(1, 8)
+    randomNum=random.randint(1, 9)
     pygame.mixer.music.load("music/niallHoran/" + str(randomNum) + ".mp3")
+    pygame.mixer.music.play(0)
+    while pygame.mixer.music.get_busy():
+        print("playing")
+        if (input()=="s"):
+            pygame.mixer.music.stop()
+
+if id == 6:
+    randomNum=random.randint(1, 6)
+    pygame.mixer.music.load("music/latin/" + str(randomNum) + ".mp3")
+    pygame.mixer.music.play(0)
+    while pygame.mixer.music.get_busy():
+        print("playing")
+        if (input()=="s"):
+            pygame.mixer.music.stop()
+
+if id == 7:
+    randomNum=random.randint(1, 7)
+    pygame.mixer.music.load("music/romance/" + str(randomNum) + ".mp3")
     pygame.mixer.music.play(0)
     while pygame.mixer.music.get_busy():
         print("playing")
