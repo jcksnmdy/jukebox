@@ -2,6 +2,7 @@
 import pygame
 import random
 import time
+import os
 
 id = 1
 pygame.init()
@@ -54,3 +55,6 @@ while True:
         randomNum=random.randint(1, 20)
         pygame.mixer.music.load("music/pop/" + str(randomNum) + ".mp3")
         pygame.mixer.music.play(0)
+
+    if id == 10:
+        os.system("sudo shutdown now")
