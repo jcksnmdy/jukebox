@@ -15,6 +15,7 @@ def keepAwake():
             pygame.mixer.music.load("music/silence.mp3")
             print("playing silence")
             pygame.mixer.music.play(0)
+        time.sleep(30)
 
 awake = threading.Thread(group=None, target=keepAwake, name=None)
 awake.start()
