@@ -67,9 +67,9 @@ while True:
     if id == "0003466871":
         if (vol < 100):
             vol += 10
-        os.system("sudo amixer cset numid=1 " + str(vol) + "%")
+        os.system("sudo amixer cset numid=0 " + str(vol) + "%")
 
     if id == "0003466854":
         if (vol > 0):
             vol -= 10
-        os.system("sudo amixer cset numid=1 " + str(vol) + "%")
+        os.system("sudo amixer cset numid=0 " + str(vol) + "%")
