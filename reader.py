@@ -6,7 +6,7 @@ import os
 
 id = 1
 pygame.init()
-vol = 20
+vol = 40
 os.system("amixer set Master " + str(vol) + "%")
 
 while True:
