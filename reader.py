@@ -6,6 +6,7 @@ import os
 
 id = 1
 pygame.init()
+vol = 20
 
 while True:
 
@@ -56,5 +57,18 @@ while True:
         pygame.mixer.music.load("music/pop/" + str(randomNum) + ".mp3")
         pygame.mixer.music.play(0)
 
-    if id == "0004086591":
+    if id == "0003487172":
         os.system("sudo shutdown now")
+
+    if id == "0004086591":
+        pygame.mixer.music.stop()
+
+    if id == "0003466871":
+        if (vol < 100):
+            vol += 10
+        os.system("sudo amixer cset numid=1 " + str(vol) + "%")
+
+    if id == "0003466854":
+        if (vol > 0):
+            vol -= 10
+        os.system("sudo amixer cset numid=1 " + str(vol) + "%")
