@@ -7,7 +7,7 @@ import os
 id = 1
 pygame.init()
 vol = 20
-os.system("sudo amixer cset numid=1 " + str(vol) + "%")
+os.system("sudo amixer set Master " + str(vol) + "%")
 
 while True:
 
