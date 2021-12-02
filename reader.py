@@ -7,7 +7,7 @@ import os
 id = 1
 pygame.init()
 vol = 20
-os.system("sudo amixer set Master " + str(vol) + "%")
+os.system("amixer set Master " + str(vol) + "%")
 
 while True:
 
@@ -67,9 +67,9 @@ while True:
     if id == "0003466871":
         if (vol < 100):
             vol += 10
-        os.system("sudo amixer set Master " + str(vol) + "%")
+        os.system("amixer set Master " + str(vol) + "%")
 
     if id == "0003466854":
         if (vol > 0):
             vol -= 10
-        os.system("sudo amixer set Master " + str(vol) + "%")
+        os.system("amixer set Master " + str(vol) + "%")
