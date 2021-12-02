@@ -7,13 +7,14 @@ from datetime import datetime
 import threading
 
 def keepAwake():
-    now = datetime.now()
-    current_time = now.strftime("%H:%M:%S")
-    print(current_time[3:5])
-    if (int(current_time[3:5])/5==0) and not pygame.mixer.music.get_busy():
-        pygame.mixer.music.load("music/silence.mp3")
-        print("playing silence")
-        pygame.mixer.music.play(0)
+    while True:
+        now = datetime.now()
+        current_time = now.strftime("%H:%M:%S")
+        print(current_time[3:5])
+        if (int(current_time[3:5])/5==0) and not pygame.mixer.music.get_busy():
+            pygame.mixer.music.load("music/silence.mp3")
+            print("playing silence")
+            pygame.mixer.music.play(0)
 
 awake = threading.Thread(group=None, target=keepAwake, name=None)
 awake.start()
