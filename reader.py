@@ -7,11 +7,15 @@ import os
 id = 1
 pygame.init()
 vol = 40
+os.system("ifconfig")
 os.system("amixer set Master " + str(vol) + "%")
 
 while True:
 
     id = input("Card")
+
+    pygame.mixer.music.load("music/acoustic/" + str(randomNum) + ".mp3")
+    pygame.mixer.music.play(0)
 
     if id == "0004086624":
         randomNum=random.randint(1, 10)
