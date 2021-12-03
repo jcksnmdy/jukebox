@@ -19,65 +19,146 @@ def keepAwake():
 
 awake = threading.Thread(group=None, target=keepAwake, name=None)
 awake.start()
-id = 1
+run = True
+def playSongs(playlist, songs):
+    while run:
+            randomNum=random.randint(1, songs)
+            pygame.mixer.music.load("music/" + playlist + "/" + str(randomNum) + ".mp3")
+            pygame.mixer.music.play(0)
+            while pygame.mixer.music.get_busy():
+                time.sleep(1)
+
 pygame.init()
+
+playerSongs = threading.Thread(group=None, target=playSongs, args=("faouzia", 14, ), name=None)
+#playerSongs.start()
+#playerSongs.join()
+
+id = 1
+
 vol = 40
 os.system("ifconfig")
 os.system("amixer set Master " + str(vol) + "%")
 
 while True:
+    playerSongs
     id = input("Card")
 
     if id == "0004086624":
-        randomNum=random.randint(1, 10)
-        pygame.mixer.music.load("music/acoustic/" + str(randomNum) + ".mp3")
-        pygame.mixer.music.play(0)
+        pygame.mixer.music.stop()
+        if (playerSongs.is_alive()):
+            run = False
+            playerSongs.join()
+            print("Stopped")
+        run = True
+        playerSongs = threading.Thread(group=None, target=playSongs, args=("acoustic", 10, ), name=None)
+        playerSongs.start()
         
     if id == "0003825451":
-        randomNum=random.randint(1, 11)
-        pygame.mixer.music.load("music/disney/" + str(randomNum) + ".mp3")
-        pygame.mixer.music.play(0)
+        pygame.mixer.music.stop()
+        if (playerSongs.is_alive()):
+            run = False
+            playerSongs.join()
+            print("Stopped")
+        run = True
+        playerSongs = threading.Thread(group=None, target=playSongs, args=("disney", 11, ), name=None)
+        playerSongs.start()
         
     if id == "0004086613":
-        randomNum=random.randint(1, 14)
-        pygame.mixer.music.load("music/faouzia/" + str(randomNum) + ".mp3")
-        pygame.mixer.music.play(0)
+        pygame.mixer.music.stop()
+        if (playerSongs.is_alive()):
+            run = False
+            playerSongs.join()
+            print("Stopped")
+        run = True
+        playerSongs = threading.Thread(group=None, target=playSongs, args=("faouzia", 14, ), name=None)
+        playerSongs.start()
         
     if id == "0004177330":
-        randomNum=random.randint(1, 11)
-        pygame.mixer.music.load("music/larenDaigle/" + str(randomNum) + ".mp3")
-        pygame.mixer.music.play(0)
+        pygame.mixer.music.stop()
+        if (playerSongs.is_alive()):
+            run = False
+            playerSongs.join()
+            print("Stopped")
+        run = True
+        playerSongs = threading.Thread(group=None, target=playSongs, args=("larenDaigle", 12, ), name=None)
+        playerSongs.start()
 
     if id == "0003825420":
-        randomNum=random.randint(1, 9)
-        pygame.mixer.music.load("music/niallHoran/" + str(randomNum) + ".mp3")
-        pygame.mixer.music.play(0)
+        pygame.mixer.music.stop()
+        if (playerSongs.is_alive()):
+            run = False
+            playerSongs.join()
+            print("Stopped")
+        run = True
+        playerSongs = threading.Thread(group=None, target=playSongs, args=("niallHoran", 9, ), name=None)
+        playerSongs.start()
         
     if id == "0003825428":
-        randomNum=random.randint(1, 6)
-        pygame.mixer.music.load("music/latin/" + str(randomNum) + ".mp3")
-        pygame.mixer.music.play(0)
+        pygame.mixer.music.stop()
+        if (playerSongs.is_alive()):
+            run = False
+            playerSongs.join()
+            print("Stopped")
+        run = True
+        playerSongs = threading.Thread(group=None, target=playSongs, args=("latin", 6, ), name=None)
+        playerSongs.start()
         
     if id == "0004086602":
-        randomNum=random.randint(1, 14)
-        pygame.mixer.music.load("music/romance/" + str(randomNum) + ".mp3")
-        pygame.mixer.music.play(0)
+        pygame.mixer.music.stop()
+        if (playerSongs.is_alive()):
+            run = False
+            playerSongs.join()
+            print("Stopped")
+        run = True
+        playerSongs = threading.Thread(group=None, target=playSongs, args=("romance", 14, ), name=None)
+        playerSongs.start()
         
     if id == "0004177315":
-        randomNum=random.randint(1, 9)
-        pygame.mixer.music.load("music/christian/" + str(randomNum) + ".mp3")
-        pygame.mixer.music.play(0)
+        pygame.mixer.music.stop()
+        if (playerSongs.is_alive()):
+            run = False
+            playerSongs.join()
+            print("Stopped")
+        run = True
+        playerSongs = threading.Thread(group=None, target=playSongs, args=("christian", 9, ), name=None)
+        playerSongs.start()
         
     if id == "0003825442":
-        randomNum=random.randint(1, 20)
-        pygame.mixer.music.load("music/pop/" + str(randomNum) + ".mp3")
-        pygame.mixer.music.play(0)
+        pygame.mixer.music.stop()
+        if (playerSongs.is_alive()):
+            run = False
+            playerSongs.join()
+            print("Stopped")
+        run = True
+        playerSongs = threading.Thread(group=None, target=playSongs, args=("pop", 20, ), name=None)
+        playerSongs.start()
 
     if id == "0003487172":
         os.system("sudo shutdown now")
 
     if id == "0004086591":
         pygame.mixer.music.stop()
+
+        if (playerSongs.is_alive()):
+            run = False
+            playerSongs.join()
+            print("Stopped")
+        
+        if (playerSongs.is_alive()):
+            run = False
+            playerSongs.join()
+            print("Stopped")
+
+        if (playerSongs.is_alive()):
+            run = False
+            playerSongs.join()
+            print("Stopped")
+        
+        if (playerSongs.is_alive()):
+            run = False
+            playerSongs.join()
+            print("Stopped")
 
     if id == "0003466871":
         if (vol < 100):
